@@ -139,18 +139,15 @@ Before configuring Moltbot, you need to create an Azure Bot resource.
 Use the Azure portal that matches your cloud environment and keep the Azure Bot
 resource and App Registration in the same cloud and tenant.
 
-| Cloud | Portal URL |
-| --- | --- |
-| Azure (Public) | https://portal.azure.com |
-| Azure Government | https://portal.azure.us |
-| Azure China | https://portal.azure.cn |
+| Cloud | Portal URL | Create Azure Bot |
+| --- | --- | --- |
+| Azure (Public) | https://portal.azure.com | https://portal.azure.com/#create/Microsoft.AzureBot |
+| Azure Government | https://portal.azure.us | https://portal.azure.us/#create/Microsoft.AzureBot |
+| Azure China | https://portal.azure.cn | https://portal.azure.cn/#create/Microsoft.AzureBot |
 
 ### Step 1: Create Azure Bot
 
-1. Go to **Create Azure Bot** in your cloud portal:
-   - Azure (Public): https://portal.azure.com/#create/Microsoft.AzureBot
-   - Azure Government: https://portal.azure.us/#create/Microsoft.AzureBot
-   - Azure China: https://portal.azure.cn/#create/Microsoft.AzureBot
+1. Open the **Create Azure Bot** link for your cloud from the table above.
 2. Fill in the **Basics** tab:
 
    | Field | Value |
