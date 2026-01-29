@@ -147,7 +147,10 @@ resource and App Registration in the same cloud and tenant.
 
 ### Step 1: Create Azure Bot
 
-1. Go to [Create Azure Bot](https://portal.azure.com/#create/Microsoft.AzureBot)
+1. Go to **Create Azure Bot** in your cloud portal:
+   - Azure (Public): https://portal.azure.com/#create/Microsoft.AzureBot
+   - Azure Government: https://portal.azure.us/#create/Microsoft.AzureBot
+   - Azure China: https://portal.azure.cn/#create/Microsoft.AzureBot
 2. Fill in the **Basics** tab:
 
    | Field | Value |
