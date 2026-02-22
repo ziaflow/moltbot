@@ -28,7 +28,7 @@ const { initSpy, runSpy, loadConfig } = vi.hoisted(() => ({
   runSpy: vi.fn(() => ({
     task: () => Promise.resolve(),
     stop: vi.fn(),
-    isRunning: () => false,
+    isRunning: () => false as boolean,
   })),
   loadConfig: vi.fn(() => ({
     agents: { defaults: { maxConcurrent: 2 } },
@@ -48,7 +48,7 @@ const { registerUnhandledRejectionHandlerMock, emitUnhandledRejection, resetUnha
           }
         };
       }),
-      emitUnhandledRejection: (reason: unknown) => handler?.(reason) ?? false,
+      emitUnhandledRejection: (reason: unknown): boolean => handler?.(reason) ?? false,
       resetUnhandledRejection: () => {
         handler = undefined;
       },
@@ -214,10 +214,12 @@ describe("monitorTelegramProvider (grammY)", () => {
       .mockImplementationOnce(() => ({
         task: () => Promise.reject(networkError),
         stop: vi.fn(),
+        isRunning: () => false,
       }))
       .mockImplementationOnce(() => ({
         task: () => Promise.resolve(),
         stop: vi.fn(),
+        isRunning: () => false,
       }));
 
     await monitorTelegramProvider({ token: "tok" });
@@ -331,6 +333,7 @@ describe("monitorTelegramProvider (grammY)", () => {
     runSpy.mockImplementationOnce(() => ({
       task: () => Promise.reject(new Error("bad token")),
       stop: vi.fn(),
+      isRunning: () => false,
     }));
 
     await expect(monitorTelegramProvider({ token: "tok" })).rejects.toThrow("bad token");
