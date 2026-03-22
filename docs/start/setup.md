@@ -75,11 +75,12 @@ If you also want the macOS app on the bleeding edge:
 ### 1) Start the dev Gateway
 
 ```bash
-pnpm install
+./scripts/setup-agent-dev.sh
 pnpm gateway:watch
 ```
 
 `gateway:watch` runs the gateway in watch mode and reloads on TypeScript changes.
+`setup-agent-dev.sh` runs the first-time prerequisites (dependency install + build) and prints a ready-to-run agent command.
 
 ### 2) Point the macOS app at your running Gateway
 
